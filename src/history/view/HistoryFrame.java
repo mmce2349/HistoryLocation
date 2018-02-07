@@ -19,8 +19,7 @@ public class HistoryFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setSize(500, 500);
-		this.setTitle("Chatbot 2017");
-		this.setContentPane(appPanel);
+		this.setTitle("HistoryLocator-csp");
 		this.setResizable(false);
 		this.setVisible(true);
 	}
