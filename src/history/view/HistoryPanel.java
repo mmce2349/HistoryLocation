@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class HistoryPanel 
+public class HistoryPanel extends JPanel
 {
 	private HistoryController appController;
 	private SpringLayout appLayout;
@@ -48,8 +48,11 @@ public class HistoryPanel
 		
 		this.setBackground(Color.BLACK);
 		this.add(descriptionArea);
-		this.add(appLayout);
-		this.add()
+		this.add(viewLocalHistory);
+		this.add(viewLocalSites);
+		this.add(titleLabel);
+		this.add(locationLabel);
+		
 		
 		
 		
