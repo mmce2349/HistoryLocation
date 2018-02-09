@@ -22,5 +22,6 @@ public class HistoryFrame extends JFrame
 		this.setTitle("HistoryLocator-csp");
 		this.setResizable(false);
 		this.setVisible(true);
+		
 	}
 }
