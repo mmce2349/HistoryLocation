@@ -30,8 +30,14 @@ public class HistoryPanel extends JPanel
 		
 		viewLocalHistory = new JButton("History");
 		viewLocalSites = new JButton("Sites");
-		
+		appLayout.putConstraint(SpringLayout.NORTH, viewLocalHistory, 0, SpringLayout.NORTH, viewLocalSites);
+		appLayout.putConstraint(SpringLayout.WEST, viewLocalHistory, 40, SpringLayout.EAST, viewLocalSites);
+		appLayout.putConstraint(SpringLayout.WEST, viewLocalSites, 115, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, viewLocalSites, -92, SpringLayout.SOUTH, this);
+		descriptionArea = new JTextArea("This is an app which takes your location and shows you local history and sites");
 		titleLabel = new JLabel("History locator");
+		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 10, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, titleLabel, 174, SpringLayout.WEST, this);
 		locationLabel = new JLabel();
 		
 		this.History = new JPanel();
@@ -52,6 +58,8 @@ public class HistoryPanel extends JPanel
 		this.add(viewLocalSites);
 		this.add(titleLabel);
 		this.add(locationLabel);
+		this.add(descriptionArea);
+		
 		
 		
 		
