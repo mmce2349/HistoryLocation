@@ -14,7 +14,7 @@ public class HistoryPanel extends JPanel
 	
 	private JButton viewLocalHistory;
 	private JButton viewLocalSites;
-	
+	private JButton close;
 	private JLabel titleLabel;
 	private JLabel locationLabel;
 	
@@ -29,7 +29,7 @@ public class HistoryPanel extends JPanel
 		appLayout = new SpringLayout();
 		
 		viewLocalHistory = new JButton("History");
-		
+		close = new JButton("Close App");
 		viewLocalSites = new JButton("Sites");
 	
 		//descriptionArea = new JTextArea("This is an app which takes your location and shows you local history and sites");
@@ -58,7 +58,7 @@ public class HistoryPanel extends JPanel
 		this.add(titleLabel);
 		this.add(locationLabel);
 		this.add(descriptionArea);
-		
+		this.add(close);
 		
 		
 		
@@ -93,6 +93,13 @@ public class HistoryPanel extends JPanel
 			public void actionPerformed(ActionEvent click)
 			{
 				
+			}
+		});
+		close.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				System.exit(0);
 			}
 		});
 	}
