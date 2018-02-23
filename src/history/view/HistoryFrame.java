@@ -13,7 +13,7 @@ public class HistoryFrame extends JFrame
 	{
 		super();
 		this.appController = appController;
-		
+		appPanel = new HistoryPanel(appController);
 		setupFrame();
 	}
 	private void setupFrame()
