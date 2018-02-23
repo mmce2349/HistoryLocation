@@ -20,7 +20,8 @@ public class HistoryFrame extends JFrame
 	{
 		this.setSize(500, 500);
 		this.setTitle("HistoryLocator-csp");
-		this.setResizable(false);
+		this.setContentPane(appPanel);
+		this.setResizable(true);
 		this.setVisible(true);
 		
 	}
