@@ -30,6 +30,7 @@ public class HistoryPanel extends JPanel
 		
 		viewLocalHistory = new JButton("History");
 		close = new JButton("Close App");
+		
 		viewLocalSites = new JButton("Sites");
 	
 		//descriptionArea = new JTextArea("This is an app which takes your location and shows you local history and sites");
@@ -37,6 +38,7 @@ public class HistoryPanel extends JPanel
 		titleLabel = new JLabel("History locator");
 		
 		locationLabel = new JLabel("location");
+		
 	
 		
 		this.History = new JPanel();
@@ -67,9 +69,6 @@ public class HistoryPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.NORTH, locationLabel, -26, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.WEST, locationLabel, 190, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, locationLabel, -10, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, viewLocalHistory, 6, SpringLayout.SOUTH, titleLabel);
 		appLayout.putConstraint(SpringLayout.NORTH, descriptionArea, 9, SpringLayout.SOUTH, titleLabel);
 		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 32, SpringLayout.NORTH, this);
@@ -78,6 +77,10 @@ public class HistoryPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, viewLocalSites, 0, SpringLayout.NORTH, viewLocalHistory);
 		appLayout.putConstraint(SpringLayout.EAST, viewLocalSites, -67, SpringLayout.WEST, viewLocalHistory);
 		appLayout.putConstraint(SpringLayout.EAST, viewLocalHistory, -111, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, locationLabel, 5, SpringLayout.NORTH, close);
+		appLayout.putConstraint(SpringLayout.WEST, locationLabel, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, close, 186, SpringLayout.SOUTH, viewLocalHistory);
+		appLayout.putConstraint(SpringLayout.EAST, close, -10, SpringLayout.EAST, this);
 	}
 	private void setupListeners()
 	{
