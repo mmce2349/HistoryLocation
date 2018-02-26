@@ -18,7 +18,7 @@ public class HistoryController
 	public HistoryController()
 	{
 		location = new ProvideLocation();
-		appFrame = new HistoryFrame(this);
+		this.appFrame = new HistoryFrame(this);
 		Website = new ProvideWebsite();
 		
 	}
