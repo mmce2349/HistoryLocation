@@ -51,7 +51,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        menuBar.add(fileMenu);
 		        setJMenuBar(menuBar);
 		         
-		        
+		        //cool
 		        JPanel buttonPanel = new JPanel();
 		        backButton = new JButton("< Back");
 		        backButton.addActionListener(new ActionListener() {
