@@ -2,7 +2,7 @@ package history.controller;
 
 
 import history.view.HistoryFrame;
-import history.model.ProvideWebsite;
+import history.view.ProvideWebsite;
 import history.model.ProvideLocation;
 
 public class HistoryController 
