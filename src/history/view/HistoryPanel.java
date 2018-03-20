@@ -59,7 +59,7 @@ public class HistoryPanel extends JPanel
 		this.add(inputField);
 		
 	}
-	
+
 	private void setupLayout()
 	{
 		appLayout.putConstraint(SpringLayout.NORTH, descriptionArea, 9, SpringLayout.SOUTH, titleLabel);
@@ -77,6 +77,7 @@ public class HistoryPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, inputField, 66, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, close, 12, SpringLayout.SOUTH, viewLocalHistory);
 	}
+	//*Abstraction
 	private void setupListeners()
 	{
 		viewLocalHistory.addActionListener(new ActionListener()
