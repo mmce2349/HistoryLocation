@@ -17,7 +17,7 @@ public class HistoryPanel extends JPanel
 	private JButton close;
 	private JLabel titleLabel;
 	private JLabel locationLabel;
-	
+	private JTextField inputField;
 	private JTextArea descriptionArea;
 	private JPanel History;
 	
@@ -25,7 +25,7 @@ public class HistoryPanel extends JPanel
 	{
 		super();
 		this.appController = appController; 
-		
+		inputField = new JTextField(25);
 		appLayout = new SpringLayout();
 		
 		viewLocalHistory = new JButton("History");
@@ -61,7 +61,7 @@ public class HistoryPanel extends JPanel
 		this.add(locationLabel);
 		this.add(descriptionArea);
 		this.add(close);
-		
+		this.add(inputField);
 		
 		
 		
@@ -88,7 +88,7 @@ public class HistoryPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				viewHistory = new ProvideWebsite();
 			}
 		});
 		viewLocalSites.addActionListener(new ActionListener()
