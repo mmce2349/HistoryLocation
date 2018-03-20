@@ -17,16 +17,16 @@ public class HistoryController
 	
 	public HistoryController()
 	{
-		location = new ProvideLocation();
-		this.appFrame = new HistoryFrame(this);
-		Website = new ProvideWebsite();
+	
 		
 	}
 	
 	//methods
 	public void start()
 	{
-		
+		location = new ProvideLocation();
+		this.appFrame = new HistoryFrame(this);
+		Website = new ProvideWebsite();
 		
 	}
 	
