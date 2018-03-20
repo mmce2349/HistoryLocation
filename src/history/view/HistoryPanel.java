@@ -27,26 +27,14 @@ public class HistoryPanel extends JPanel
 		this.appController = appController; 
 		inputField = new JTextField(25);
 		appLayout = new SpringLayout();
-		appLayout.putConstraint(SpringLayout.WEST, inputField, 66, SpringLayout.WEST, this);
-		
 		viewLocalHistory = new JButton("History");
 		close = new JButton("Close App");
-		appLayout.putConstraint(SpringLayout.NORTH, close, 12, SpringLayout.SOUTH, viewLocalHistory);
-		
 		viewLocalSites = new JButton("Sites");
-		appLayout.putConstraint(SpringLayout.NORTH, viewLocalHistory, 0, SpringLayout.NORTH, viewLocalSites);
-		appLayout.putConstraint(SpringLayout.WEST, viewLocalHistory, 78, SpringLayout.EAST, viewLocalSites);
-		appLayout.putConstraint(SpringLayout.WEST, viewLocalSites, 92, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, viewLocalSites, -43, SpringLayout.SOUTH, this);
-	
 		//descriptionArea = new JTextArea("This is an app which takes your location and shows you local history and sites");
 		
 		titleLabel = new JLabel("History locator");
-		appLayout.putConstraint(SpringLayout.NORTH, inputField, 77, SpringLayout.SOUTH, titleLabel);
 		
 		locationLabel = new JLabel("location");
-		
-	
 		
 		this.History = new JPanel();
 		
@@ -70,8 +58,6 @@ public class HistoryPanel extends JPanel
 		this.add(close);
 		this.add(inputField);
 		
-		
-		
 	}
 	
 	private void setupLayout()
@@ -83,6 +69,13 @@ public class HistoryPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, locationLabel, 5, SpringLayout.NORTH, close);
 		appLayout.putConstraint(SpringLayout.WEST, locationLabel, 10, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, close, -10, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, viewLocalHistory, 0, SpringLayout.NORTH, viewLocalSites);
+		appLayout.putConstraint(SpringLayout.WEST, viewLocalHistory, 78, SpringLayout.EAST, viewLocalSites);
+		appLayout.putConstraint(SpringLayout.WEST, viewLocalSites, 92, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, viewLocalSites, -43, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, inputField, 77, SpringLayout.SOUTH, titleLabel);
+		appLayout.putConstraint(SpringLayout.WEST, inputField, 66, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, close, 12, SpringLayout.SOUTH, viewLocalHistory);
 	}
 	private void setupListeners()
 	{
