@@ -93,6 +93,7 @@ public class HistoryPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				String sites = inputField.getText();
 				
 			}
 		});
