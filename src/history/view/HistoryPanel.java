@@ -86,7 +86,7 @@ public class HistoryPanel extends JPanel
 			{
 				String city = inputField.getText();
 				
-				//appController.ProvideWebsite(city);
+				appController.ProvideWebsite(city);
 			}
 		});
 		viewLocalSites.addActionListener(new ActionListener()

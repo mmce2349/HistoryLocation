@@ -11,7 +11,7 @@ public class HistoryController
 	
 	private ProvideLocation location;
 	private HistoryFrame appFrame;
-	//private ProvideWebsite Website;
+	private ProvideWebsite Website;
 	
 	
 	
@@ -19,7 +19,7 @@ public class HistoryController
 	{
 		location = new ProvideLocation();
 		this.appFrame = new HistoryFrame(this);
-		//Website = new ProvideWebsite();
+		Website = new ProvideWebsite();
 		
 	}
 	
