@@ -1,4 +1,5 @@
 package history.view;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.net.*;
@@ -66,7 +67,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		                actionBack();
 		            }
 		        });
-		        backButton.setEnabled(false);
+		        backButton.setEnabled(false);//double check this
 		        buttonPanel.add(backButton);
 		        forwardButton = new JButton("Forward >");
 		        forwardButton.addActionListener(new ActionListener() 
@@ -76,7 +77,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		                actionForward();
 		            }
 		        });
-		        forwardButton.setEnabled(false);
+		        forwardButton.setEnabled(false);//this to!
 		        buttonPanel.add(forwardButton);
 		        locationTextField = new JTextField(35);
 		        locationTextField.addKeyListener(new KeyAdapter() 
@@ -126,8 +127,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        int pageIndex = pageList.indexOf(currentUrl.toString());
 		        try 
 		        {
-		            showPage(
-		                    new URL((String) pageList.get(pageIndex - 1)), false);
+		            showPage(new URL((String) pageList.get(pageIndex - 1)), false);
 		        } 
 		        catch (Exception e) 
 		        {
@@ -142,8 +142,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        int pageIndex = pageList.indexOf(currentUrl.toString());
 		        try 
 		        {
-		            showPage(
-		                    new URL((String) pageList.get(pageIndex + 1)), false);
+		            showPage( new URL((String) pageList.get(pageIndex + 1)), false);
 		        } 
 		        catch (Exception e) 
 		        {
@@ -168,8 +167,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		   
 		    private void showError(String errorMessage) 
 		    {
-		        JOptionPane.showMessageDialog(this, errorMessage,
-		                "Error", JOptionPane.ERROR_MESSAGE);
+		        JOptionPane.showMessageDialog(this, errorMessage,"Error", JOptionPane.ERROR_MESSAGE);
 		    }
 		     
 		
