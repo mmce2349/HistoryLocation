@@ -22,7 +22,8 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		    private ArrayList pageList = new ArrayList();
 		     
 		   
-		    public ProvideWebsite() {
+		    public ProvideWebsite() 
+		    {
 		        
 		        super("ProvideWebsite");
 		         
@@ -30,8 +31,10 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        setSize(640, 480);
 		         
 		   
-		        addWindowListener(new WindowAdapter() {
-		            public void windowClosing(WindowEvent e) {
+		        addWindowListener(new WindowAdapter() 
+		        {
+		            public void windowClosing(WindowEvent e) 
+		            {
 		                actionExit();
 		            }
 		        });
@@ -42,8 +45,10 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        fileMenu.setMnemonic(KeyEvent.VK_F);
 		        JMenuItem fileExitMenuItem = new JMenuItem("Exit",
 		                KeyEvent.VK_X);
-		        fileExitMenuItem.addActionListener(new ActionListener() {
-		            public void actionPerformed(ActionEvent e) {
+		        fileExitMenuItem.addActionListener(new ActionListener() 
+		        {
+		            public void actionPerformed(ActionEvent e) 
+		            {
 		                actionExit();
 		            }
 		        });
@@ -54,33 +59,42 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        //cool
 		        JPanel buttonPanel = new JPanel();
 		        backButton = new JButton("< Back");
-		        backButton.addActionListener(new ActionListener() {
-		            public void actionPerformed(ActionEvent e) {
+		        backButton.addActionListener(new ActionListener() 
+		        {
+		            public void actionPerformed(ActionEvent e) 
+		            {
 		                actionBack();
 		            }
 		        });
 		        backButton.setEnabled(false);
 		        buttonPanel.add(backButton);
 		        forwardButton = new JButton("Forward >");
-		        forwardButton.addActionListener(new ActionListener() {
-		            public void actionPerformed(ActionEvent e) {
+		        forwardButton.addActionListener(new ActionListener() 
+		        {
+		            public void actionPerformed(ActionEvent e) 
+		            {
 		                actionForward();
 		            }
 		        });
 		        forwardButton.setEnabled(false);
 		        buttonPanel.add(forwardButton);
 		        locationTextField = new JTextField(35);
-		        locationTextField.addKeyListener(new KeyAdapter() {
-		            public void keyReleased(KeyEvent e) {
-		                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+		        locationTextField.addKeyListener(new KeyAdapter() 
+		        {
+		            public void keyReleased(KeyEvent e) 
+		            {
+		                if (e.getKeyCode() == KeyEvent.VK_ENTER) 
+		                {
 		                    actionGo();
 		                }
 		            }
 		        });
 		        buttonPanel.add(locationTextField);
 		        JButton goButton = new JButton("GO");
-		        goButton.addActionListener(new ActionListener() {
-		            public void actionPerformed(ActionEvent e) {
+		        goButton.addActionListener(new ActionListener() 
+		        {
+		            public void actionPerformed(ActionEvent e) 
+		            {
 		                actionGo();
 		            }
 		        });
@@ -99,58 +113,80 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		    }
 		     
 		  
-		    private void actionExit() {
+		    private void actionExit() 
+		    {
 		        System.exit(0);
 		    }
 		     
 		  
-		    private void actionBack() {
+		    private void actionBack() 
+		    {
 		        URL currentUrl = displayEditorPane.getPage();
 		 
 		        int pageIndex = pageList.indexOf(currentUrl.toString());
-		        try {
+		        try 
+		        {
 		            showPage(
 		                    new URL((String) pageList.get(pageIndex - 1)), false);
-		        } catch (Exception e) {}
+		        } 
+		        catch (Exception e) 
+		        {
+		        	
+		        }
 		    }
 		     
 		  
-		    private void actionForward() {
+		    private void actionForward() 
+		    {
 		        URL currentUrl = displayEditorPane.getPage();
 		        int pageIndex = pageList.indexOf(currentUrl.toString());
-		        try {
+		        try 
+		        {
 		            showPage(
 		                    new URL((String) pageList.get(pageIndex + 1)), false);
-		        } catch (Exception e) {}
+		        } 
+		        catch (Exception e) 
+		        {
+		        	
+		        }
 		    }
 		     
 		    
-		    private void actionGo() {
+		    private void actionGo() 
+		    {
 		        URL verifiedUrl = verifyUrl(locationTextField.getText());
-		        if (verifiedUrl != null) {
+		        if (verifiedUrl != null)
+		        {
 		            showPage(verifiedUrl, true);
-		        } else {
+		        } 
+		        else 
+		        {
 		            showError("Invalid URL");
 		        }
 		    }
 		     
 		   
-		    private void showError(String errorMessage) {
+		    private void showError(String errorMessage) 
+		    {
 		        JOptionPane.showMessageDialog(this, errorMessage,
 		                "Error", JOptionPane.ERROR_MESSAGE);
 		    }
 		     
 		
-		    private URL verifyUrl(String url) {
+		    private URL verifyUrl(String url) 
+		    {
 		       
 		        if (!url.toLowerCase().startsWith("http://"))
 		            return null;
 		         
 		       
 		        URL verifiedUrl = null;
-		        try {
+		        try 
+		        {
 		            verifiedUrl = new URL(url);
-		        } catch (Exception e) {
+		        } 
+		        catch (Exception e) 
+		        {
 		            return null;
 		        }
 		         
@@ -158,11 +194,13 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		    }
 		     
 		
-		    private void showPage(URL pageUrl, boolean addToList) {
+		    private void showPage(URL pageUrl, boolean addToList) 
+		    {
 		     
 		        setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 		         
-		        try {
+		        try 
+		        {
 		        
 		            URL currentUrl = displayEditorPane.getPage();
 		             
@@ -173,13 +211,17 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		            URL newUrl = displayEditorPane.getPage();
 		             
 		         
-		            if (addToList) {
+		            if (addToList) 
+		            {
 		                int listSize = pageList.size();
-		                if (listSize > 0) {
+		                if (listSize > 0) 
+		                {
 		                    int pageIndex =
 		                            pageList.indexOf(currentUrl.toString());
-		                    if (pageIndex < listSize - 1) {
-		                        for (int i = listSize - 1; i > pageIndex; i--) {
+		                    if (pageIndex < listSize - 1) 
+		                    {
+		                        for (int i = listSize - 1; i > pageIndex; i--) 
+		                        {
 		                            pageList.remove(i);
 		                        }
 		                    }
@@ -192,21 +234,29 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		             
 		           
 		            updateButtons();
-		        } catch (Exception e) {
+		        } 
+		        catch (Exception e) 
+		        {
 		       
 		            showError("Unable to load page");
-		        } finally {
+		        } 
+		        finally 
+		        {
 		          
 		            setCursor(Cursor.getDefaultCursor());
 		        }
 		    }
 		     
 		 
-		    private void updateButtons() {
-		        if (pageList.size() < 2) {
+		    private void updateButtons() 
+		    {
+		        if (pageList.size() < 2) 
+		        {
 		            backButton.setEnabled(false);
 		            forwardButton.setEnabled(false);
-		        } else {
+		        } 
+		        else 
+		        {
 		            URL currentUrl = displayEditorPane.getPage();
 		            int pageIndex = pageList.indexOf(currentUrl.toString());
 		            backButton.setEnabled(pageIndex > 0);
@@ -216,23 +266,29 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		    }
 		     
 		
-		    public void hyperlinkUpdate(HyperlinkEvent event) {
+		    public void hyperlinkUpdate(HyperlinkEvent event)
+		    {
 		        HyperlinkEvent.EventType eventType = event.getEventType();
-		        if (eventType == HyperlinkEvent.EventType.ACTIVATED) {
-		            if (event instanceof HTMLFrameHyperlinkEvent) {
+		        if (eventType == HyperlinkEvent.EventType.ACTIVATED) 
+		        {
+		            if (event instanceof HTMLFrameHyperlinkEvent) 
+		            {
 		                HTMLFrameHyperlinkEvent linkEvent =
 		                        (HTMLFrameHyperlinkEvent) event;
 		                HTMLDocument document =
 		                        (HTMLDocument) displayEditorPane.getDocument();
 		                document.processHTMLFrameHyperlinkEvent(linkEvent);
-		            } else {
+		            } 
+		            else 
+		            {
 		                showPage(event.getURL(), true);
 		            }
 		        }
 		    }
 		     
 		   
-		    public static void main(String[] args) {
+		    public static void main(String[] args) 
+		    {
 		        ProvideWebsite browser = new ProvideWebsite();
 		        browser.show();
 		    }
