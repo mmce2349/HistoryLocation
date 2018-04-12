@@ -67,7 +67,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		                actionBack();
 		            }
 		        });
-		        backButton.setEnabled(false);//double check this
+		        backButton.setEnabled(false);
 		        buttonPanel.add(backButton);
 		        forwardButton = new JButton("Forward >");
 		        forwardButton.addActionListener(new ActionListener() 
@@ -77,7 +77,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		                actionForward();
 		            }
 		        });
-		        forwardButton.setEnabled(false);//this to!
+		        forwardButton.setEnabled(false);
 		        buttonPanel.add(forwardButton);
 		        locationTextField = new JTextField(35);
 		        locationTextField.addKeyListener(new KeyAdapter() 
