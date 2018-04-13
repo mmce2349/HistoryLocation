@@ -250,8 +250,8 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		    {
 		        if (pageList.size() < 2) 
 		        {
-		            backButton.setEnabled(false);
-		            forwardButton.setEnabled(false);
+		            backButton.setEnabled(true);
+		            forwardButton.setEnabled(true);
 		        } 
 		        else 
 		        {
