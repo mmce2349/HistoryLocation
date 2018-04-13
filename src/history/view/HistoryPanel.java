@@ -48,7 +48,7 @@ public class HistoryPanel extends JPanel
 	{
 		setLayout(appLayout);
 		
-		this.setBackground(Color.BLUE);
+		this.setBackground(Color.WHITE);
 		this.add(descriptionArea);
 		this.add(viewLocalHistory);
 		this.add(viewLocalSites);
