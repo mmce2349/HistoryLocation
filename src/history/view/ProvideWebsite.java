@@ -208,7 +208,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		         
 		            URL newUrl = displayEditorPane.getPage();
 		             
-		         
+		         //startAbstraction
 		            if (addToList) 
 		            {
 		                int listSize = pageList.size();
@@ -226,6 +226,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		                }
 		                pageList.add(newUrl.toString());
 		            }
+		            //endAbstraction
 		             
 		          
 		            locationTextField.setText(newUrl.toString());
@@ -263,7 +264,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        }
 		    }
 		     
-		
+		//startComplexity
 		    public void hyperlinkUpdate(HyperlinkEvent event)
 		    {
 		        HyperlinkEvent.EventType eventType = event.getEventType();
@@ -284,7 +285,7 @@ public class ProvideWebsite extends JFrame implements HyperlinkListener
 		        }
 		    }
 		     
-		   
+		   //endComplexity
 		    public static void main(String[] args) 
 		    {
 		        ProvideWebsite browser = new ProvideWebsite();
