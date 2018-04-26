@@ -10,7 +10,7 @@ import javax.swing.text.html.*;
 
 public class ProvideWebsite extends JFrame implements HyperlinkListener 
 	  {
-<<<<<<< HEAD
+
 		    
     private JButton backButton, forwardButton;
 //	    private JButton backButton, forwardButton;

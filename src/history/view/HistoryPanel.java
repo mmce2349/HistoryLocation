@@ -4,10 +4,16 @@ import history.controller.HistoryController;
 import java.awt.Color;
 
 import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class HistoryPanel extends JPanel
+import java.awt.*;
+import java.awt.event.*;
+import java.net.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.*;
+import javax.swing.text.html.*;
+
+public class HistoryPanel extends JPanel implements HyperlinkListener
 {
 	private HistoryController appController;
 	private SpringLayout appLayout;
@@ -20,10 +26,16 @@ public class HistoryPanel extends JPanel
 	private JTextField inputField;
 	private JTextArea descriptionArea;
 	private JPanel History;
+	private JButton backButton, forwardButton;
+	private JTextField URLField;
+	 private JEditorPane displayEditorPane;
+	 private ArrayList pageList = new ArrayList();
 	
 	public HistoryPanel(HistoryController appController)
 	{
-		super();
+		super("ProvideWebsite");
+	    setSize(700, 500);
+	    
 		this.appController = appController; 
 		inputField = new JTextField(25);
 		appLayout = new SpringLayout();
@@ -41,6 +53,11 @@ public class HistoryPanel extends JPanel
 		setupPanel();
 		setupLayout();
 		setupListeners();
+		JMenuBar menu = new JMenuBar();
+		 JMenu fileMenu = new JMenu("File");
+		 fileMenu.setMnemonic(KeyEvent.VK_F);
+		 JMenuItem fileExitMenuItem = new JMenuItem("Abort Program", KeyEvent.VK_X);
+		
 		
 	}
 	
@@ -57,7 +74,9 @@ public class HistoryPanel extends JPanel
 		this.add(descriptionArea);
 		this.add(close);
 		this.add(inputField);
-		
+		 fileMenu.add(fileExitMenuItem);
+			menu.add(fileMenu);
+			setJMenuBar(menu);
 	}
 
 	private void setupLayout()
@@ -104,5 +123,21 @@ public class HistoryPanel extends JPanel
 				System.exit(0);
 			}
 		});
+		addWindowListener(new WindowAdapter()
+		   {
+		   	public void closeWindow(WindowEvent e)
+			{
+			actionEscape();
+			}
+		   
+		   });
+		fileExitMenuItem.addActionListener(new ActionListener()
+		 {
+		 public void actionPerformed(ActionEvent e)
+		 {
+		 actionEscape();
+		 }
+		 });
+		
 	}
 }
