@@ -57,8 +57,15 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 		 JMenu fileMenu = new JMenu("File");
 		 fileMenu.setMnemonic(KeyEvent.VK_F);
 		 JMenuItem fileExitMenuItem = new JMenuItem("Abort Program", KeyEvent.VK_X);
-		
-		
+		 JPanel buttonPanel = new JPanel();
+			backButton = new JButton( "<- Back");
+			backButton.setEnabled(true);
+			buttonPanel.add(backButton);
+			forwardButton = new JButton(" Forward ->");
+			forwardButton.setEnabled(true);
+			buttonPanel.add(forwardButton);
+			URLField = new JTextField(35);
+			
 	}
 	
 	private void setupPanel()
@@ -77,6 +84,11 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 		 fileMenu.add(fileExitMenuItem);
 			menu.add(fileMenu);
 			setJMenuBar(menu);
+			forwardButton.setEnabled(true);
+			buttonPanel.add(forwardButton);
+			URLField = new JTextField(35);
+			buttonPanel.add(URLField);
+			JButton returnButton = new JButton("Return");
 	}
 
 	private void setupLayout()
@@ -133,11 +145,43 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 		   });
 		fileExitMenuItem.addActionListener(new ActionListener()
 		 {
-		 public void actionPerformed(ActionEvent e)
-		 {
-		 actionEscape();
-		 }
+			public void actionPerformed(ActionEvent e)
+		 	{
+			 actionEscape();
+		 	}
 		 });
-		
+		backButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				actionBack();
+			}
+		});
+		{
+			public void actionPerformed(ActionEvent event)
+			{
+				actionForward();
+			}
+			});
+			URLField.addKeyListener(new KeyAdapter()
+			{
+				public void keyReleased(KeyEvent event)
+				{
+					if(event.getKeyCode() == KeyEvent.VK_ENTER)
+					{
+						actionGo();
+					}
+				}
+			});
+			URLField.addKeyListener(new KeyAdapter() 
+			{
+				public void keyReleased(KeyEvent event)
+				{
+					if(event.getKeyCode() == KeyEvent.VK_ENTER)
+					{
+						actionGo();
+					}
+				}
+			});
 	}
 }
