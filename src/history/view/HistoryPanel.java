@@ -145,7 +145,7 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 			 			URL currentURL = displayEditorPane.getPage();
 			 			displayEditorPane.setPage(pageUrl);
 			 			URL newUrl = displayEditorPane.getPage();
-			 			//abstraction
+			 			//startAbstraction
 			 			if(addToList)
 			 			{
 			 				int listSize = pageList.size();
@@ -195,6 +195,7 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 				}
 			 } 
 	}
+	//startComplexity
 	public void hyperlinkUpdate(HyperlinkEvent event)
 	{
 	HyperlinkEvent.EventType eventType = event.getEventType();
@@ -211,6 +212,7 @@ public class HistoryPanel extends JPanel implements HyperlinkListener
 			showPage(event.getURL(), true);
 		}
 	}
+	//endComplexity
 	
 	private void setupPanel()
 	{
